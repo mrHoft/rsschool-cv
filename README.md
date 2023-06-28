@@ -1,1 +1,1 @@
-[rsschool-cv](https://mrHoft.github.io/rsschool-cv/cv)
+[RSSchool-cv](https://mrHoft.github.io/rsschool-cv/cv)
