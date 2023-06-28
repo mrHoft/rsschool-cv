@@ -1,7 +1,9 @@
 ## Nikolay Hoft
+
 <img align="right" width="64" height="64" title="Author logo" src="http://daytec.ru/img/Ranjy-96.svg">
 
 ### Contacts:
+
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/mr.hoft) 
 [![Telegram](https://img.shields.io/badge/-Telegram-0088cc?style=flat-square&logo=Telegram&logoColor=white)](https://t.me/mrHoft)
 
@@ -11,6 +13,7 @@ I am a frontend/game developer and C++/Python practitioner with over 5 years of 
 But I want to become a good fullstack (preferentially frontend) developer to work in a product company that makes handy services. I appreciate the friendly relations in the team and with the management. My strengths: diligence, desire to improve and good soft skills.
 
 ### Tech Stack:
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -34,6 +37,7 @@ But I want to become a good fullstack (preferentially frontend) developer to wor
 ![Perl](https://img.shields.io/badge/perl-%2339457E.svg?style=for-the-badge&logo=perl&logoColor=white)
 
 ### Experience:
+
 | Period | Description |
 | --- | --- |
 | 2022 - 2023 | Я.Practicum<br/>Middle frontend-developer.<br/>[web-messenger](https://github.com/mrHoft/pet-chat)<br/>[web-game](https://github.com/fastPaws-game/fastPaws)|
@@ -42,12 +46,14 @@ But I want to become a good fullstack (preferentially frontend) developer to wor
 | 2001 - 2007 | Mobitel, Picadon, Sunrise<br/>Sales manager, director.<br/>Wholesale and retail trade in computer equipment, mobile phones, software. |
 
 ### Education:
+
 - Middle frontend-developer course from Я.Practicum.
 - The “programmer” certificate was received along with a diploma of a geodesist at the initiative of a computer science teacher for winning Olympiads (PSKhK).
 - English B1 (ESCC).
 - Self-development: RSSchool, W3Schools, EnglishClass101, freecodecamp.org, codewars.com, learn.javascript.ru and other.
 
 ### React hook code examle:
+
 ```ts
 export const useAudio = () => {
   const resource = Resource.get()
