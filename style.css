@@ -1,0 +1,52 @@
+:root {
+	color-scheme: light dark;
+
+	--black: #000;
+	--gray: #888;
+	--light-gray: #aaa;
+	--white: #fff;
+
+	--link-color: #89C5CC;
+	--text-color: var(--black);
+	--tip-color: var(--gray);
+	--main-bg: var(--white);
+	--main-bg1: var(--light-gray);
+	--code-bg: var(--light-gray);
+
+	--font-stack: arial, helvetica, sans-serif;
+	--font-monospace: courier, monospace;
+}
+
+body {
+	background-image: linear-gradient(var(--main-bg), var(--main-bg1));
+	/* background-color: var(--main-bg); */
+	font-family: var(--font-stack);
+	font-weight: 400;
+	color: var(--text-color);
+	font-size: 16px;
+	margin: 0;
+	display: flex;
+	width: 100svw;
+	height: 100svh;
+}
+
+h1, h2, h3, h4, h5 {
+	font-variant: small-caps;
+}
+
+code:before {
+	background: var(--code-bg);
+	color: var(--tip-color);
+	content: "Code";
+	display: inline-block;
+	font-size: 0.6rem;
+	font-weight: 700;
+	height: 1rem;
+	left: 0;
+	letter-spacing: 0.1em;
+	line-height: 1rem;
+	padding: 0 0.5em;
+	position: absolute;
+	/* text-transform: uppercase; */
+	top: 0;	
+}
