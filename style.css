@@ -2,12 +2,13 @@
 	color-scheme: light dark;
 
 	--black: #000;
-	--gray: #888;
-	--light-gray: #aaa;
+	--gray: #666;
+	--light-gray: #ddd;
 	--white: #fff;
 
-	--link-color: #89C5CC;
+	--link-color: #3d747a;
 	--text-color: var(--black);
+	--border-color: var(--black);
 	--tip-color: var(--gray);
 	--main-bg: var(--white);
 	--main-bg1: var(--light-gray);
@@ -18,35 +19,64 @@
 }
 
 body {
-	background-image: linear-gradient(var(--main-bg), var(--main-bg1));
-	/* background-color: var(--main-bg); */
+	/* background-image: linear-gradient(var(--main-bg), var(--main-bg1)); */
+	background-color: var(--main-bg);
 	font-family: var(--font-stack);
 	font-weight: 400;
 	color: var(--text-color);
 	font-size: 16px;
 	margin: 0;
+	/* display: flex; */
+	/* width: 100svw; */
+	/* height: 100svh; */
+}
+
+main, header, footer {
+	margin: 1rem;
+}
+
+footer {
 	display: flex;
-	width: 100svw;
-	height: 100svh;
+	justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5 {
 	font-variant: small-caps;
+	margin: .25rem 0;
 }
 
-code:before {
-	background: var(--code-bg);
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+/* == Table == */
+thead {
+	background-color: var(--main-bg1);
+}
+td{
+	border-bottom: 1px solid var(--main-bg1);
+}
+
+/* == Code == */
+code {
+	position: relative;
+}
+pre {
+	background-color: var(--code-bg);
+	border: 1px solid var(--border-color);
+	padding: 0.5rem;
+}
+pre:before {
 	color: var(--tip-color);
 	content: "Code";
 	display: inline-block;
-	font-size: 0.6rem;
+	font-size: 0.8rem;
 	font-weight: 700;
-	height: 1rem;
-	left: 0;
 	letter-spacing: 0.1em;
-	line-height: 1rem;
-	padding: 0 0.5em;
+	padding: 0.5em;
 	position: absolute;
-	/* text-transform: uppercase; */
-	top: 0;	
+	text-transform: uppercase;
+	top: 0;
+	right: 0;
 }

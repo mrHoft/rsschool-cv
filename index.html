@@ -8,37 +8,160 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- CSS Files Links -->
-	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./style.css">
 
 	<!-- Title -->
-	<title>Simple Page</title>
+	<title>Hoft CV</title>
+
+	<script>
+		function includeHTML() {
+			var z, i, el, file, xhttp;
+			/* Loop through a collection of all HTML elements: */
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				el = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = el.getAttribute("include-html");
+				if (file) {
+					/* Make an HTTP request using the attribute value as the file name: */
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) { el.innerHTML = this.responseText; }
+							if (this.status == 404) { el.innerHTML = "Page not found."; }
+							/* Remove the attribute, and call this function once more: */
+							el.removeAttribute("include-html");
+							includeHTML();
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					return;
+				}
+			}
+		}
+	</script>
 </head>
 
 <body>
 	<header>
-		<h1>HTML5 Template</h1>
+		<img align="right" width="64" height="64" title="Author logo" src="http://daytec.ru/img/Ranjy-96.svg"
+			alt="Avatar"/>
+		<h1>Nikolay Hoft</h1>
 	</header>
 
 	<aside>
 		<nav> <!-- Дополнительное меню страницы -->
 			<ul>
-				<li><a href="/service-1/">Услуга 1</a></li>
-				<li><a href="/service-2/">Услуга 2</a></li>
-				<li><a href="/service-3/">Услуга 3</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				<li><a href="#about">About me</a></li>
+				<li><a href="#stack">Tech Stack</a></li>
+				<li><a href="#exp">Experience</a></li>
+				<li><a href="#edu">Education</a></li>
+				<li><a href="#example">Code examle</a></li>
 			</ul>
 		</nav>
 	</aside>
 
 	<main>
-		<p>This is a simple HTML5 Template</p>
+		<h2 id="contacts">Contacts:</h2>
+		<a href="https://discord.gg/mr.hoft"><img
+				src="https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white" alt="Discord" /></a>
+		<a href="https://t.me/mrHoft"><img
+				src="https://img.shields.io/badge/-Telegram-0088cc?style=flat-square&logo=Telegram&logoColor=white"
+				alt="Telegram" /></a>
+
+		<h2 id="about">About me:</h2>
+		<p>A frontend/game developer and C++/Python practitioner with over 5 years of experience from the black sea region.
+		</p>
+		<p>I want to become a good fullstack (preferentially frontend) developer to work in a product company that makes
+			handy services. I appreciate the friendly relations in the team and with the management. My strengths: diligence,
+			desire to improve and good soft skills.</p>
+
+		<h2 id="stack">Tech Stack:</h2>
+		<ul>
+			<li>HTML5, CSS3</li>
+			<li>JavaScript, TypeScript</li>
+			<li>Node.js, Express.js</li>
+			<li>React, Redux, Styled Components</li>
+			<li>Webpack, Lerna, Vite</li>
+			<li>Chai, Mocha, Jest</li>
+			<li>SQL, Postgres, Sequelize</li>
+			<li>Linux, Docker, Compose</li>
+			<li>JavaScript, TypeScript</li>
+		</ul>
+
+		<h2 id="exp">Experience:</h2>
+		<table>
+			<thead>
+				<tr>
+					<td>Period</td>
+					<td>Description</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2022 - 2023</td>
+					<td>
+						<h4>Y.Practicum</h4>
+						Middle frontend-developer.<br />
+						<a href="https://github.com/mrHoft/pet-chat">web-messenger</a><br />
+						<a href="https://github.com/fastPaws-game/fastPaws">web-game</a><br />
+					</td>
+				</tr>
+				<tr>
+					<td>2011 - now</td>
+					<td>
+						<h4>Freelance</h4>
+						Fulfilling orders for development, write books, working on personal projects.<br />
+						<a href="https://www.esoui.com/downloads/author-23287.html">Hoft AddOns: ESOUI</a> 10kk+ downloads<br />
+					</td>
+				</tr>
+				<tr>
+					<td>2010 - 2011</td>
+					<td>
+						<h4>IE Bilko</h4>
+						Installation and administration of server rooms based on Windows NT, networks, video surveillance, 1C.
+					</td>
+				</tr>
+				<tr>
+					<td>2001 - 2007</td>
+					<td>
+						<h4>Mobitel, Picadon, Sunrise</h4>
+						Sales manager, director.<br />
+						Wholesale and retail trade in computer equipment, mobile phones, software.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 id="edu">Education:</h2>
+		<ul>
+			<li>Middle frontend-developer course from Y.Practicum.</li>
+			<li>The “programmer” certificate was received along with a diploma of a geodesist at the initiative of a computer
+				science teacher for winning Olympiads (PSKhK).</li>
+			<li>English B1 (ESCC).</li>
+			<li>Self-development: RS School, W3 Schools, EnglishClass101, freecodecamp.org, codewars.com, learn.javascript.ru
+				and other.</li>
+		</ul>
+
+		<h2 id="example">React hook code examle:</h2>
+		<code>
+			<pre include-html="code-example.txt">1234567</pre>
+		</code>
 	</main>
 
 	<footer>
-		<p>HTML5 Template</p>
+		<span>2023 <a href="https://github.com/mrHoft">mrHoft</a></span>
+		<span><a href="https://rs.school/js/"><img height="16" src="https://rs.school/images/rs_school_js.svg"
+					alt="RS School"></a></span>
 	</footer>
 
 	<noscript>Your browser don't support JavaScript!</noscript>
 	<!-- <script src="./scripts.js"></script> -->
+	<script>
+		includeHTML();
+	</script>
 </body>
 
 </html>
