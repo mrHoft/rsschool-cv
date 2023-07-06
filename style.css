@@ -18,8 +18,15 @@
 	--font-monospace: courier, monospace;
 }
 
+html {
+	display: flex;
+	justify-content: center;
+}
+
 body {
 	/* background-image: linear-gradient(var(--main-bg), var(--main-bg1)); */
+	width: 80%;
+	max-width: 800px;
 	background-color: var(--main-bg);
 	font-family: var(--font-stack);
 	font-weight: 400;
