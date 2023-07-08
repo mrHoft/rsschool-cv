@@ -45,16 +45,17 @@ main, header, footer {
 header, footer {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
 footer {
 	justify-content: space-between;
 }
 
-#photo {
-	margin-left: 25%;
-	display: flex;
-	align-items: center;
+#photo img {
+	height: 100%;
+	aspect-ratio: 1;
+	border-radius: 50%;
 }
 
 /* == Side bar == */
@@ -111,7 +112,7 @@ td{
 }
 
 /* == Code == */
-code {
+#code {
 	position: relative;
 }
 pre {
