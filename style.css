@@ -3,16 +3,19 @@
 
 	--black: #000;
 	--gray: #666;
-	--light-gray: #ddd;
 	--white: #fff;
+	--light-gray: #ddd;
+	--bright-gray: #eeeeee;
 
 	--link-color: #3d747a;
 	--text-color: var(--black);
 	--border-color: var(--black);
 	--tip-color: var(--gray);
-	--main-bg: var(--white);
+	--main-bg: var(--bright-gray);
 	--main-bg1: var(--light-gray);
 	--code-bg: var(--light-gray);
+	--table-bg: var(--light-gray);
+	--side-bar-bg: var(--bright-gray);
 
 	--font-stack: arial, helvetica, sans-serif;
 	--font-monospace: courier, monospace;
@@ -25,9 +28,9 @@ html {
 
 body {
 	/* background-image: linear-gradient(var(--main-bg), var(--main-bg1)); */
+	background-color: var(--white);
 	width: 80%;
 	max-width: 800px;
-	background-color: var(--main-bg);
 	font-family: var(--font-stack);
 	font-weight: 400;
 	color: var(--text-color);
@@ -39,16 +42,14 @@ body {
 }
 
 main, header, footer {
-	margin: 1rem;
+	margin: 0;
+	padding: 0 1rem;
+	background-color: var(--bright-gray);
 }
 
-header, footer {
+#info, #footer {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-}
-
-footer {
 	justify-content: space-between;
 }
 
@@ -61,7 +62,7 @@ footer {
 /* == Side bar == */
 aside {
 	padding: 10px;
-	background-color: var(--light-gray);
+	background-color: var(--side-bar-bg);
 	border-radius: 22px 0 0 22px;
 	width: 24px;
   position: -webkit-sticky;
@@ -104,11 +105,14 @@ a {
 }
 
 /* == Table == */
-thead {
-	background-color: var(--main-bg1);
-}
-td{
+table {
 	border-bottom: 1px solid var(--main-bg1);
+}
+thead {
+	background-color: var(--table-bg);
+}
+tr:nth-of-type(2n+2) {
+	background-color: var(--table-bg);
 }
 
 /* == Code == */
