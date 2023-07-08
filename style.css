@@ -47,7 +47,7 @@ main, header, footer {
 	background-color: var(--bright-gray);
 }
 
-#info, #footer {
+#info article, footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

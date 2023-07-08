@@ -3,7 +3,6 @@
   <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/svg" href="http://daytec.ru/img/Ranjy-96.svg">
 
@@ -12,279 +11,36 @@
 
     <!-- Title -->
     <title>Hoft CV</title>
-
-    <script>
-      function includeHTML() {
-        var z, i, el, file, xhttp
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName('*')
-        for (i = 0; i < z.length; i++) {
-          el = z[i]
-          /*search for elements with a certain atrribute:*/
-          file = el.getAttribute('include-html')
-          if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest()
-            xhttp.onreadystatechange = function () {
-              if (this.readyState == 4) {
-                if (this.status == 200) {
-                  el.innerHTML = this.responseText
-                }
-                if (this.status == 404) {
-                  el.innerHTML = 'Page not found.'
-                }
-                /* Remove the attribute, and call this function once more: */
-                el.removeAttribute('include-html')
-                includeHTML()
-              }
-            }
-            xhttp.open('GET', file, true)
-            xhttp.send()
-            return
-          }
-        }
-      }
-    </script>
   </head>
 
   <body>
     <aside>
-      <nav>
-        <ul>
-          <li>
-            <a href="#info" title="Contacts">
-							<!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M19 7h5v2h-5V7zm-2 5h7v2h-7v-2zm3 5h4v2h-4v-2zM2 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H2zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#about" title="About me">
-							<!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                <path d="M9 17h6" />
-                <path d="M9 13h6" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#stack" title="Tech Stack">
-							<!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                <circle cx="16" cy="16" r="4" />
-                <path d="M27.758,10.366l-1-1.732c-0.552-0.957-1.775-1.284-2.732-0.732L23.5,8.206C21.5,9.36,19,7.917,19,5.608V5c0-1.105-0.895-2-2-2h-2  c-1.105,0-2,0.895-2,2v0.608c0,2.309-2.5,3.753-4.5,2.598L7.974,7.902C7.017,7.35,5.794,7.677,5.242,8.634l-1,1.732  c-0.552,0.957-0.225,2.18,0.732,2.732L5.5,13.402c2,1.155,2,4.041,0,5.196l-0.526,0.304c-0.957,0.552-1.284,1.775-0.732,2.732  l1,1.732c0.552,0.957,1.775,1.284,2.732,0.732L8.5,23.794c2-1.155,4.5,0.289,4.5,2.598V27c0,1.105,0.895,2,2,2h2  c1.105,0,2-0.895,2-2v-0.608c0-2.309,2.5-3.753,4.5-2.598l0.526,0.304c0.957,0.552,2.18,0.225,2.732-0.732l1-1.732  c0.552-0.957,0.225-2.18-0.732-2.732L26.5,18.598c-2-1.155-2-4.041,0-5.196l0.526-0.304C27.983,12.546,28.311,11.323,27.758,10.366z" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#exp" title="Experience">
-							<!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
-                <path d="M16,7H8V4A1,1,0,0,1,9,3h6a1,1,0,0,1,1,1Zm1,4H7m8,0v2" />
-                <rect x="5" y="5" width="14" height="18" rx="1" transform="translate(26 2) rotate(90)" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#edu" title="Education">
-							<!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="16,4 1,12 16,20 31,12 " />
-                <path d="M7,15.2V22c0,2.2,4,5,9,5c5,0,9-2.8,9-5v-6.8" />
-                <line x1="31" y1="12" x2="31" y2="25" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#example" title="Code examle">
-							<!-- prettier-ignore -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H16C17.6569 21 19 19.6569 19 18V10.8125V8.625M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19" />
-                <path d="M10 12L8 14L10 16" />
-                <path d="M14 12L16 14L14 16" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
+			<wrapper-tmpl id="nav" include-html="./src/article/navigation.tmpl"></wrapper-tmpl>
     </aside>
 
-		<header>
-			<!-- Epmty -->
-		</header>
+		<div>
+			<main>
+				<wrapper-tmpl id="info" include-html="./src/article/info.tmpl"></wrapper-tmpl>
+				<wrapper-tmpl id="about" include-html="./src/article/about.tmpl"></wrapper-tmpl>
+				<wrapper-tmpl id="stack" include-html="./src/article/tech-stack.tmpl"></wrapper-tmpl>
+				<wrapper-tmpl id="exp" include-html="./src/article/experience.tmpl"></wrapper-tmpl>
+				<article id="example">
+					<h2>Code examle:</h2>
+					<wrapper-tmpl id="code" include-html="./src/article/code-example.tmpl"></wrapper-tmpl>
+				</article>
+			</main>
 
-		<main>
-			<article id="info">
-			<div>
-				<wrapper-row>
-					<h1>Nikolay Hoft</h1>
-					<span>1997</span>
-				</wrapper-row>
-				<p>Krasnodar, ready to relocate</p>
-				<p>Frontend, Gamedev</p>
-				<div id="contacts">
-					<h2>Contacts:</h2>
-					<a href="mailto:Hoft@daytec.ru">
-						<img src="https://img.shields.io/badge/%40_Email-blue" alt="Email">
-					</a>
-					<a href="https://discord.gg/mr.hoft">
-						<img
-							src="https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white"
-							alt="Discord">
-					</a>
-					<a href="https://t.me/mrHoft">
-						<img src="https://img.shields.io/badge/-Telegram-0088cc?logo=Telegram&logoColor=white" alt="Telegram">
-					</a>
-					<a href="https://github.com/mrHoft">
-						<img src="https://img.shields.io/badge/GitHub-gray?logo=github" alt="GitHub">
-					</a>
-				</div>
-			</div>
-			<div id="photo">
-				<img title="Author logo" src="https://avatars.githubusercontent.com/u/51874769" alt="Avatar">
-			</div>
-			</article>
-
-			<article id="about">
-			<h2>About me:</h2>
-			<p>
-				A frontend/game developer and C++/Python practitioner with over 5 years of experience from the black sea
-				region.
-			</p>
-			<p>
-				I want to become a good fullstack (preferentially frontend) developer to work in a product company that makes
-				handy services. I appreciate the friendly relations in the team and with the management.
-			</p>
-			</article>
-
-			<article id="stack">
-			<h2>Tech Stack:</h2>
-			<ul>
-				<li>HTML5, CSS3, SCSS</li>
-				<li>JavaScript, TypeScript</li>
-				<li>Node.js, Express.js</li>
-				<li>React, Redux, Styled Components</li>
-				<li>Webpack, Lerna, Vite</li>
-				<li>Chai, Mocha, Jest</li>
-				<li>SQL, Postgres, Sequelize</li>
-				<li>Linux, Docker, Compose</li>
-				<li>JavaScript, TypeScript</li>
-			</ul>
-			</article>
-
-			<article id="exp">
-			<h2>Experience:</h2>
-			<table>
-				<thead>
-					<tr>
-						<td style="width: 100px">Period</td>
-						<td>Description</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>2022 - 2023</td>
-						<td>
-							<h4>Y.Practicum</h4>
-							<p>Middle frontend-developer.</p>
-							<ul>
-								<li>
-									<a href="https://github.com/mrHoft/pet-chat">web-messenger</a>
-									<br>
-									<span>TS, Templator, MVC, HOC, Websocket, Webpack, Docker</span>
-								</li>
-								<li>
-									<a href="https://github.com/fastPaws-game/fastPaws">web-game</a>
-									<br>
-									<span>TS, React, Redux, OAuth, SSR, Node, Express, Postgres, Proxy, Helmet, Webpack, Nginx, Docker, Compose</span>
-								</li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<td>2011 - now</td>
-						<td>
-							<h4>Freelance</h4>
-							<p>Fulfilling orders for development, write books, working on personal projects.</p>
-							<ul>
-								<li>
-									<a href="https://www.esoui.com/downloads/author-23287.html">ESOUI: Author page</a>
-									<br>
-									<span>The Elder Scrolls Online UI (10kk+ downloads)</span>
-								</li>
-								<li>
-									<a href="https://github.com/mrHoft/MapPins.merge">MapPins.merge</a>
-									<br>
-									<span>Data merge service for <a href="https://www.esoui.com/downloads/info1881-MapPins.html">MapPins</a></span>
-								</li>
-								<li>
-									<a href="https://ridero.ru/author/khoft_nikolai_xxhhg/">Ridero: Author page</a>
-								</li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<td>2010 - 2011</td>
-						<td>
-							<h4>IE Bilko</h4>
-							<p>Installation and administration of server rooms based on Windows NT, networks, video surveillance, 1C.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>2001 - 2007</td>
-						<td>
-							<h4>Mobitel, Picadon, Sunrise</h4>
-							<p>Sales manager, director.</p>
-							<p>Wholesale and retail trade in computer equipment, mobile phones, software.</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			</article>
-
-			<article id="edu">
-			<h2>Education:</h2>
-			<ul>
-				<li>Middle frontend-developer course from Y.Practicum.</li>
-				<li>
-					The “programmer” certificate was received along with a diploma of a geodesist at the initiative of a
-					computer science teacher for winning Olympiads (PSKhK).
-				</li>
-				<li>English B1 (ESCC).</li>
-				<li>
-					Self-development: RS School, W3 Schools, EnglishClass101, freecodecamp.org, codewars.com,
-					learn.javascript.ru and other.
-				</li>
-			</ul>
-			</article>
-
-			<article id="example">
-				<h2>React hook code examle:</h2>
-				<div id="code" include-html="code-example.tmpl"></div>
-			</article>
-
-			<div id="footer">
+			<footer>
 				<span>2023 <a href="https://github.com/mrHoft">mrHoft</a></span>
 				<span>
 					<a href="https://rs.school/js/">
 						<img height="16" src="https://rs.school/images/rs_school_js.svg" alt="RS School">
 					</a>
 				</span>
-			</div>
-		</main>
-
-		<footer>
-			<!-- Empty -->
-		</footer>
+			</footer>
+		</div>
 
     <noscript>Your browser don't support JavaScript!</noscript>
-    <!-- <script src="./scripts.js"></script> -->
-    <script>
-      includeHTML()
-    </script>
+    <script src="./scripts.js" type="module"></script>
   </body>
 </html>
