@@ -1,0 +1,37 @@
+<pre>
+  <span style="color: green;">// React hook useAudio</span>
+  <span style="color: royalblue; font-weight: bold">export</span> <span style="color: royalblue; font-weight: bold">const</span> useAudio <span style="color: #333333">=</span> () <span style="color: #333333">=&gt;</span> {
+  <span style="color: royalblue; font-weight: bold">const</span> resource <span style="color: #333333">=</span> Resource.get()
+  <span style="color: royalblue; font-weight: bold">const</span> [audioList, setAudioList] <span style="color: #333333">=</span> useState<span style="color: #333333">&lt;</span>Record<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">string</span>, HTMLAudioElement<span style="color: #333333">&gt;&gt;</span>({})
+  <span style="color: royalblue; font-weight: bold">let</span> audioEnabled <span style="color: #333333">=</span> useAppSelector(SettingsSelectors.getAudioEnabled)
+
+  <span style="color: royalblue; font-weight: bold">const</span> createAudio <span style="color: #333333">=</span> (name: <span style="color: #333399; font-weight: bold">string</span>) <span style="color: #333333">=&gt;</span> {
+    <span style="color: royalblue; font-weight: bold">const</span> audioType <span style="color: #333333">=</span> name.split(<span style="color: brown">&#39;.&#39;</span>)[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: royalblue; font-weight: bold">as</span> TAudio
+    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #007020">Object</span>.keys(AudioVolume).includes(audioType)) {
+      <span style="color: royalblue; font-weight: bold">const</span> audio <span style="color: #333333">=</span> getValue(resource.audio, name) <span style="color: royalblue; font-weight: bold">as</span> HTMLAudioElement
+      audio.muted <span style="color: #333333">=</span> <span style="color: royalblue; font-weight: bold">false</span>
+      audio.volume <span style="color: #333333">=</span> AudioVolume[audioType] <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">10</span>
+      audio.loop <span style="color: #333333">=</span> audioType <span style="color: #333333">===</span> <span style="color: brown">&#39;music&#39;</span>
+
+      <span style="color: royalblue; font-weight: bold">const</span> list <span style="color: #333333">=</span> audioList
+      list[name] <span style="color: #333333">=</span> audio
+      setAudioList(list)
+    } <span style="color: royalblue; font-weight: bold">else</span> {
+      console.warn(<span style="color: brown">&#39;Wrong audio name:&#39;</span>, name)
+    }
+  }
+
+  <span style="color: royalblue; font-weight: bold">const</span> playAudio <span style="color: #333333">=</span> (name: <span style="color: #333399; font-weight: bold">string</span>) <span style="color: #333333">=&gt;</span> {
+    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #333333">!</span>audioEnabled) <span style="color: royalblue; font-weight: bold">return</span>
+    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #333333">!</span>audioList[name]) createAudio(name)
+
+    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #333333">!</span><span style="color: #007020">Object</span>.keys(audioList).length <span style="color: #333333">||</span> <span style="color: #333333">!</span>audioList[name]) <span style="color: royalblue; font-weight: bold">return</span>
+
+    audioList[name].play().<span style="color: royalblue; font-weight: bold">catch</span>((e: <span style="color: #333399; font-weight: bold">Error</span>) <span style="color: #333333">=&gt;</span> {
+      console.warn(e.message)
+    })
+  }
+
+  <span style="color: royalblue; font-weight: bold">return</span> playAudio
+}
+</pre>
