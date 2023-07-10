@@ -1,3 +1,4 @@
-import includeTMPL from "./src/utils/includeTMPL.js";
+import render from "./src/utils/templator.js";
 
-includeTMPL();
+const splash = "./src/components/splash.tmpl";
+render(splash);
