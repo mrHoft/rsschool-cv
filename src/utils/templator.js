@@ -1,3 +1,18 @@
+/* Simple templator
+** Usage example:
+
+<html>
+	<body>
+		<main>
+			<Wrapper-tmpl include="./info.tmpl"></Wrapper-tmpl>
+		</main>
+		<script src="./templator.js" type="module">
+			render()
+		</script>
+	</body>
+</html>
+*/
+
 class Counter {
   constructor(start = 0) {
     this.count = start
@@ -13,9 +28,7 @@ class Counter {
   }
 }
 
-// Inserts content from external .tmpl file
-// Example:
-// <Wrapper-tmpl include="./src/article/info.tmpl"></Wrapper-tmpl>
+// Inserts content from external .tmpl files
 function includeTMPL(progressCallback = null, doneCallback = null) {
   const elements = document.getElementsByTagName('Wrapper-tmpl')
   const counter = new Counter()
@@ -60,6 +73,7 @@ export default function render(splash = null) {
   let doneCallback = null
   let progressCallback = null
 
+  // Add splash screen component
   if (splash) {
     const collection = document.getElementsByTagName('main')
     const main = collection.length > 0 ? collection[0] : undefined
@@ -79,6 +93,8 @@ export default function render(splash = null) {
           if (this.status == 404) {
             div.innerHTML = 'Page not found.'
           }
+
+          includeTMPL(progressCallback, doneCallback)
         }
       }
       xhttp.open('GET', splash, true)
@@ -94,8 +110,9 @@ export default function render(splash = null) {
       doneCallback = () => {
         div.remove()
       }
+      return
     }
   }
-
-  includeTMPL(progressCallback, doneCallback)
+  // Perform render without splash screen
+  includeTMPL()
 }
