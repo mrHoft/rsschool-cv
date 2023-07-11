@@ -1,4 +1,5 @@
 /* Simple templator
+** Author: Hoft
 ** Usage example:
 
 <html>
@@ -6,8 +7,11 @@
 		<main>
 			<Wrapper-tmpl include="./info.tmpl"></Wrapper-tmpl>
 		</main>
-		<script src="./templator.js" type="module">
-			render()
+		<script type="module">
+			import render from "./src/utils/templator.js";
+			// splash is optional and preferently must be modal
+			const splash = `<h1 id="loading-progress" style="text-align: center;">Loading...</h1>`
+			render(splash)
 		</script>
 	</body>
 </html>
@@ -19,8 +23,7 @@ class Counter {
   }
 
   add() {
-    ++this.count
-    return this.count
+    return ++this.count
   }
 
   get() {
@@ -68,11 +71,9 @@ function includeTMPL(progressCallback = null, doneCallback = null) {
 }
 
 // Performs render page.
-// splash<string> it is a path to a page that can be used as splash screen.
+// splash<string> it is an html markup
+// that can be used as splash screen.
 export default function render(splash = null) {
-  let doneCallback = null
-  let progressCallback = null
-
   // Add splash screen component
   if (splash) {
     const collection = document.getElementsByTagName('main')
@@ -84,31 +85,35 @@ export default function render(splash = null) {
       div.setAttributeNode(att)
       main.appendChild(div)
 
-      const xhttp = new XMLHttpRequest()
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            div.innerHTML = this.responseText
-          }
-          if (this.status == 404) {
-            div.innerHTML = 'Page not found.'
-          }
-
-          includeTMPL(progressCallback, doneCallback)
-        }
-      }
-      xhttp.open('GET', splash, true)
-      xhttp.send()
-
-      progressCallback = percent => {
+      const progressCallback = percent => {
         const el = document.getElementById('loading-progress')
-        if (el) {
-          el.textContent = `Loading: ${percent}%`
-        }
+        if (el) el.textContent = `Loading: ${percent}%`
       }
 
-      doneCallback = () => {
+      const doneCallback = () => {
         div.remove()
+      }
+
+      if (splash.slice(-5) === '.tmpl') {
+        // splash is a file
+        const xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            if (this.status == 200) {
+              div.innerHTML = this.responseText
+            }
+            if (this.status == 404) {
+              div.innerHTML = 'Page not found.'
+            }
+            includeTMPL(progressCallback, doneCallback)
+          }
+        }
+        xhttp.open('GET', splash, true)
+        xhttp.send()
+      } else {
+        // splash is an html markup text
+        div.innerHTML = splash
+        includeTMPL(progressCallback, doneCallback)
       }
       return
     }
