@@ -54,13 +54,12 @@ function includeTMPL(progressCallback = null, doneCallback = null) {
           el.removeAttribute('include')
 
           const count = counter.add()
-          if (progressCallback) {
-            // console.log(`${count} Added: ${file}`)
-            progressCallback(Math.floor((count / elements.length) * 100))
-          }
           if (count == elements.length) {
             // console.log('All is done!')
             if (doneCallback) doneCallback()
+          } else {
+            // console.log(`${count} Added: ${file}`)
+            if (progressCallback) progressCallback(Math.floor((count / elements.length) * 100))
           }
         }
       }
