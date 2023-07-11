@@ -52,6 +52,12 @@ main, header, footer {
 	flex-direction: row;
 	justify-content: space-between;
 }
+footer {
+	padding: 1rem;
+}
+article {
+	padding: 1rem;
+}
 
 #photo img {
 	height: 100%;
