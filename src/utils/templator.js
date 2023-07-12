@@ -1,6 +1,7 @@
-/* Simple templator
-** Author: Hoft
-** Usage example:
+/**
+ * Simple templator
+ * Author: Hoft
+ * Usage example:
 
 <html>
 	<body>
@@ -31,7 +32,12 @@ class Counter {
   }
 }
 
-// Inserts content from external .tmpl files
+/**
+ * Inserts content from external .tmpl files
+ *
+ * @param {function(percent<number>)} progressCallback Nullable
+ * @param {function} doneCallback Nullable
+ */
 function includeTMPL(progressCallback = null, doneCallback = null) {
   const elements = document.getElementsByTagName('Wrapper-tmpl')
   const counter = new Counter()
@@ -69,9 +75,11 @@ function includeTMPL(progressCallback = null, doneCallback = null) {
   }
 }
 
-// Performs render page.
-// splash<string> it is an html markup
-// that can be used as splash screen.
+/**
+ * Performs render page.
+ *
+ * @param {string | null} splash html markup or path to splash.tmpl file
+ */
 export default function render(splash = null) {
   // Add splash screen component
   if (splash) {
