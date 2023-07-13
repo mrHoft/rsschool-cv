@@ -2,12 +2,15 @@
 <html lang="en">
   <head>
     <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/svg+xml" sizes="any" href="./src/asserts/favicon.svg">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Dynamicaly generated favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' font-size='56' font-family='Arial' font-weight='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='12' fill='gray'/%3E%3Ctext y='52' x='2' textLength='60' lengthAdjust='spacingAndGlyphs' fill='white'%3E CV %3C/text%3E%3C/svg%3E" />
 
     <!-- CSS Files Links -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles.css" />
 
     <!-- Title -->
     <title>Hoft CV</title>
@@ -15,31 +18,28 @@
 
   <body>
     <aside>
-			<Wrapper-tmpl id="nav" include="./src/article/navigation.tmpl"></Wrapper-tmpl>
+      <Wrapper-tmpl include="./src/article/navigation.tmpl"></Wrapper-tmpl>
     </aside>
 
-		<div>
-			<main>
-				<Wrapper-tmpl id="info" include="./src/article/info.tmpl"></Wrapper-tmpl>
-				<Wrapper-tmpl id="about" include="./src/article/about.tmpl"></Wrapper-tmpl>
-				<Wrapper-tmpl id="stack" include="./src/article/tech-stack.tmpl"></Wrapper-tmpl>
-				<Wrapper-tmpl id="exp" include="./src/article/experience.tmpl"></Wrapper-tmpl>
-				<Wrapper-tmpl id="edu" include="./src/article/education.tmpl"></Wrapper-tmpl>
-				<article id="example">
-					<h2>Code examle:</h2>
-					<Wrapper-tmpl id="code" include="./src/article/code-example.tmpl"></Wrapper-tmpl>
-				</article>
-			</main>
+    <div>
+      <main>
+        <Wrapper-tmpl include="./src/article/info.tmpl"></Wrapper-tmpl>
+        <Wrapper-tmpl include="./src/article/about.tmpl"></Wrapper-tmpl>
+        <Wrapper-tmpl include="./src/article/tech-stack.tmpl"></Wrapper-tmpl>
+        <Wrapper-tmpl include="./src/article/experience.tmpl"></Wrapper-tmpl>
+        <Wrapper-tmpl include="./src/article/education.tmpl"></Wrapper-tmpl>
+        <Wrapper-tmpl include="./src/article/code-example.tmpl"></Wrapper-tmpl>
+      </main>
 
-			<footer>
-				<span>2023 <a href="https://github.com/mrHoft">mrHoft</a></span>
-				<span>
-					<a href="https://rs.school/js/">
-						<img height="16" src="https://rs.school/images/rs_school_js.svg" alt="RS School">
-					</a>
-				</span>
-			</footer>
-		</div>
+      <footer>
+        <span>2023 <a href="https://github.com/mrHoft">mrHoft</a></span>
+        <span>
+          <a href="https://rs.school/js/">
+            <img height="16" src="https://rs.school/images/rs_school_js.svg" alt="RS School" />
+          </a>
+        </span>
+      </footer>
+    </div>
 
     <noscript>Your browser don't support JavaScript!</noscript>
     <script src="./scripts.js" type="module"></script>
