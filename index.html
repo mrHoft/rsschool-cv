@@ -4,10 +4,13 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Dynamicaly generated favicon -->
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' font-size='56' font-family='Arial' font-weight='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='12' fill='gray'/%3E%3Ctext y='52' x='2' textLength='60' lengthAdjust='spacingAndGlyphs' fill='white'%3E CV %3C/text%3E%3C/svg%3E" />
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' font-size='56' font-family='Arial' font-weight='600' xmlns='http://www.w3.org/2000/svg'%3E
+        %3Crect width='64' height='64' rx='12' fill='gray'/%3E
+        %3Ctext y='52' x='2' textLength='60' lengthAdjust='spacingAndGlyphs' fill='white'%3E CV %3C/text%3E%3C/svg%3E" />
 
     <!-- CSS Files Links -->
     <link rel="stylesheet" href="./styles.css" />
@@ -21,11 +24,11 @@
       <Wrapper-tmpl include="./src/article/navigation.tmpl"></Wrapper-tmpl>
     </aside>
 
-    <div>
+    <div id="content">
       <main>
         <Wrapper-tmpl include="./src/article/info.tmpl"></Wrapper-tmpl>
         <Wrapper-tmpl include="./src/article/about.tmpl"></Wrapper-tmpl>
-        <Wrapper-tmpl include="./src/article/tech-stack.tmpl"></Wrapper-tmpl>
+        <Wrapper-tmpl include="./src/article/skills.tmpl"></Wrapper-tmpl>
         <Wrapper-tmpl include="./src/article/experience.tmpl"></Wrapper-tmpl>
         <Wrapper-tmpl include="./src/article/education.tmpl"></Wrapper-tmpl>
         <Wrapper-tmpl include="./src/article/code-example.tmpl"></Wrapper-tmpl>
