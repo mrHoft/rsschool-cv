@@ -38,6 +38,7 @@
 html {
   display: flex;
   justify-content: center;
+  scroll-behavior: smooth;
 }
 
 @keyframes slide {
@@ -192,11 +193,15 @@ a:hover {
   transition-duration: var(--link-transition-duration);
 }
 
-Wrapper-row {
+wrap-row {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+wrap-center {
+  display: flex;
+  justify-content: center;
 }
 
 /* == Education == */
@@ -210,7 +215,7 @@ Wrapper-row {
   top: 0;
   left: -1rem;
   display: block;
-  width: 1px;
+  width: 4px;
   height: 100%;
   background: var(--gray);
 }
@@ -221,13 +226,13 @@ Wrapper-row {
   content: '';
   position: absolute;
   /* top: 50%; */
-  left: -1rem;
+  left: calc(-1rem + 2px);
   display: block;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
   background: var(--gray);
-  transform: translate(-50%, 50%);
-  /* clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%); */
+  transform: translate(-50%, 0);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 }
 
 /* == Table == */
