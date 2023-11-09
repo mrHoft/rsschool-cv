@@ -1,40 +1,19 @@
 <article id="example">
   <h2>Code examle:</h2>
-  <pre class="code">
-  <span style="color: green;">// React hook useAudio</span>
-  <span style="color: royalblue; font-weight: bold">export</span> <span style="color: royalblue; font-weight: bold">const</span> useAudio <span style="color: #333333">=</span> () <span style="color: #333333">=&gt;</span> {
-  <span style="color: royalblue; font-weight: bold">const</span> resource <span style="color: #333333">=</span> Resource.get()
-  <span style="color: royalblue; font-weight: bold">const</span> [audioList, setAudioList] <span style="color: #333333">=</span> useState<span style="color: #333333">&lt;</span>Record<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">string</span>, HTMLAudioElement<span style="color: #333333">&gt;&gt;</span>({})
-  <span style="color: royalblue; font-weight: bold">let</span> audioEnabled <span style="color: #333333">=</span> useAppSelector(SettingsSelectors.getAudioEnabled)
-
-  <span style="color: royalblue; font-weight: bold">const</span> createAudio <span style="color: #333333">=</span> (name: <span style="color: #333399; font-weight: bold">string</span>) <span style="color: #333333">=&gt;</span> {
-    <span style="color: royalblue; font-weight: bold">const</span> audioType <span style="color: #333333">=</span> name.split(<span style="color: brown">&#39;.&#39;</span>)[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: royalblue; font-weight: bold">as</span> TAudio
-    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #007020">Object</span>.keys(AudioVolume).includes(audioType)) {
-      <span style="color: royalblue; font-weight: bold">const</span> audio <span style="color: #333333">=</span> getValue(resource.audio, name) <span style="color: royalblue; font-weight: bold">as</span> HTMLAudioElement
-      audio.muted <span style="color: #333333">=</span> <span style="color: royalblue; font-weight: bold">false</span>
-      audio.volume <span style="color: #333333">=</span> AudioVolume[audioType] <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">10</span>
-      audio.loop <span style="color: #333333">=</span> audioType <span style="color: #333333">===</span> <span style="color: brown">&#39;music&#39;</span>
-
-      <span style="color: royalblue; font-weight: bold">const</span> list <span style="color: #333333">=</span> audioList
-      list[name] <span style="color: #333333">=</span> audio
-      setAudioList(list)
-    } <span style="color: royalblue; font-weight: bold">else</span> {
-      console.warn(<span style="color: brown">&#39;Wrong audio name:&#39;</span>, name)
-    }
-  }
-
-  <span style="color: royalblue; font-weight: bold">const</span> playAudio <span style="color: #333333">=</span> (name: <span style="color: #333399; font-weight: bold">string</span>) <span style="color: #333333">=&gt;</span> {
-    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #333333">!</span>audioEnabled) <span style="color: royalblue; font-weight: bold">return</span>
-    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #333333">!</span>audioList[name]) createAudio(name)
-
-    <span style="color: royalblue; font-weight: bold">if</span> (<span style="color: #333333">!</span><span style="color: #007020">Object</span>.keys(audioList).length <span style="color: #333333">||</span> <span style="color: #333333">!</span>audioList[name]) <span style="color: royalblue; font-weight: bold">return</span>
-
-    audioList[name].play().<span style="color: royalblue; font-weight: bold">catch</span>((e: <span style="color: #333399; font-weight: bold">Error</span>) <span style="color: #333333">=&gt;</span> {
-      console.warn(e.message)
-    })
-  }
-
-  <span style="color: royalblue; font-weight: bold">return</span> playAudio
-}
-</pre>
+  <pre class="code" style="font-family: monospace">
+  <span style="color: #378dd6; font-weight: bold;">function</span> createPhoneNumber<span style="color: #8655d6;">&#40;</span>numbers<span style="color: #8655d6;">&#41;</span> <span style="color: #8655d6;">&#123;</span>
+    <span style="color: #378dd6; font-weight: bold;">return</span> numbers.<span style="color: #dcdcaa;">reduce</span><span style="color: #8655d6;">&#40;</span><span style="color: #8655d6;">&#40;</span>acc<span style="color: #339933;">,</span> n<span style="color: #8655d6;">&#41;</span> <span style="color: #339933;">=&gt;</span> acc.<span style="color: #dcdcaa;">replace</span><span style="color: #8655d6;">&#40;</span><span style="color: #ce834a;">'x'</span><span style="color: #339933;">,</span> n<span style="color: #8655d6;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #ce834a;">'(xxx) xxx-xxxx'</span><span style="color: #8655d6;">&#41;</span>
+  <span style="color: #8655d6;">&#125;</span>
+  &nbsp;
+  <span style="color: #378dd6; font-weight: bold;">function</span> permutations<span style="color: #8655d6;">&#40;</span>str<span style="color: #8655d6;">&#41;</span> <span style="color: #8655d6;">&#123;</span>
+    <span style="color: #378dd6; font-weight: bold;">return</span> str.<span style="color: #dcdcaa;">length</span> <span style="color: #339933;">&lt;=</span> <span style="color: #CC0000;">1</span> <span style="color: #339933;">?</span> <span style="color: #8655d6;">&#91;</span>str<span style="color: #8655d6;">&#93;</span> <span style="color: #339933;">:</span> <span style="">Array</span>.<span style="color: #dcdcaa;">from</span><span style="color: #8655d6;">&#40;</span>
+      <span style="color: #378dd6; font-weight: bold;">new</span> Set<span style="color: #8655d6;">&#40;</span>str.<span style="color: #dcdcaa;">split</span><span style="color: #8655d6;">&#40;</span><span style="color: #ce834a;">''</span><span style="color: #8655d6;">&#41;</span>
+        .<span style="color: #dcdcaa;">map</span><span style="color: #8655d6;">&#40;</span><span style="color: #8655d6;">&#40;</span><span style="color: #9cdcf1;">char</span><span style="color: #339933;">,</span> i<span style="color: #8655d6;">&#41;</span> <span style="color: #339933;">=&gt;</span> permutations<span style="color: #8655d6;">&#40;</span>str.<span style="color: #dcdcaa;">substr</span><span style="color: #8655d6;">&#40;</span><span style="color: #CC0000;">0</span><span style="color: #339933;">,</span> i<span style="color: #8655d6;">&#41;</span> <span style="color: #339933;">+</span> str.<span style="color: #dcdcaa;">substr</span><span style="color: #8655d6;">&#40;</span>i <span style="color: #339933;">+</span> <span style="color: #CC0000;">1</span><span style="color: #8655d6;">&#41;</span><span style="color: #8655d6;">&#41;</span>
+          .<span style="color: #dcdcaa;">map</span><span style="color: #8655d6;">&#40;</span>p <span style="color: #339933;">=&gt;</span> <span style="color: #9cdcf1;">char</span> <span style="color: #339933;">+</span> p<span style="color: #8655d6;">&#41;</span>
+        <span style="color: #8655d6;">&#41;</span>
+        .<span style="color: #dcdcaa;">reduce</span><span style="color: #8655d6;">&#40;</span><span style="color: #8655d6;">&#40;</span>acc<span style="color: #339933;">,</span> val<span style="color: #8655d6;">&#41;</span> <span style="color: #339933;">=&gt;</span> acc.<span style="color: #dcdcaa;">concat</span><span style="color: #8655d6;">&#40;</span>val<span style="color: #8655d6;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #8655d6;">&#91;</span><span style="color: #8655d6;">&#93;</span><span style="color: #8655d6;">&#41;</span>
+      <span style="color: #8655d6;">&#41;</span>
+    <span style="color: #8655d6;">&#41;</span>
+  <span style="color: #8655d6;">&#125;</span>
+  </pre>
 </article>
