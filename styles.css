@@ -1,0 +1,361 @@
+:root {
+  color-scheme: light dark;
+
+  --gray: #666;
+  --bg-primary: #0e1621;
+  --bg-secondary: #182533;
+  --bg-teriary: #1e2c39;
+
+  --link-color: #4c9ce2;
+  --link-color-hover: #3a78af;
+  --link-transition-duration: 250ms;
+  --text-color: #fff;
+  --tip-color: #2b5278;
+  --main-bg: var(--bg-teriary);
+  --main-bg1: var(--bg-secondary);
+  --code-bg: var(--bg-secondary);
+  --table-bg: var(--bg-secondary);
+  --side-bar-bg: var(--bg-secondary);
+  --list-dot: #486989;
+  --diargam-progress: #486989;
+  --diargam-bg: #303133;
+
+  --font-stack: arial, helvetica, sans-serif;
+  --font-monospace: courier, monospace;
+
+  --dia-size: 64px;
+  --skill-html: 75;
+  --skill-css3: 75;
+  --skill-js: 60;
+  --skill-node: 50;
+  --skill-react: 60;
+  --skill-parcer: 60;
+  --skill-test: 40;
+  --skill-sql: 30;
+  --skill-docker: 75;
+  --skill-linux: 60;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  scroll-behavior: smooth;
+}
+
+@keyframes slide {
+  0% {
+    background-position-y: 0, 100px;
+  }
+  100% {
+    background-position-y: 220px, -340px;
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='10' x2='10' y2='220' stroke='%23182533' stroke-width='20'/%3E%3Cline x1='145' x2='145' y2='150' stroke='%23182533' stroke-width='10'/%3E%3Cline x1='65' x2='65' y2='210' stroke='%23182533' stroke-width='10'/%3E%3Cline x1='195' y1='100' x2='195' y2='220' stroke='%23182533' stroke-width='10'/%3E%3Cline x1='89.9999' y1='9.9505' x2='91.0395' y2='219.95' stroke='%23182533' stroke-width='20'/%3E%3Cline x1='170' y1='20' x2='170' y2='220' stroke='%23182533' stroke-width='20'/%3E%3Cline x1='115' x2='115' y2='180' stroke='%23182533' stroke-width='10'/%3E%3Cline x1='35' y1='20' x2='35' y2='200' stroke='%23182533' stroke-width='10'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='10' x2='10' y2='190' stroke='%231e2c39' stroke-width='20'/%3E%3Cline x1='145' x2='145' y2='150' stroke='%231e2c39' stroke-width='10'/%3E%3Cline x1='65' x2='65' y2='180' stroke='%231e2c39' stroke-width='10'/%3E%3Cline x1='205' y1='100' x2='205' y2='220' stroke='%231e2c39' stroke-width='10'/%3E%3Cline x1='89.9998' y1='59.935' x2='91.0394' y2='219.935' stroke='%231e2c39' stroke-width='20'/%3E%3Cline x1='170' y1='20' x2='170' y2='220' stroke='%231e2c39' stroke-width='20'/%3E%3Cline x1='115' x2='115' y2='180' stroke='%231e2c39' stroke-width='10'/%3E%3Cline x1='35' y1='20' x2='35' y2='200' stroke='%231e2c39' stroke-width='10'/%3E%3C/svg%3E");
+  background-position: 0 0, 60px 100px;
+  animation: slide 10s linear infinite;
+  width: 80vw;
+  max-width: 800px;
+  font-family: var(--font-stack);
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: 16px;
+  margin: 0;
+  display: flex;
+}
+
+#content {
+  width: 100%;
+}
+
+main,
+header,
+footer {
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--bg-teriary);
+}
+#info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+article {
+  padding: 1.5rem;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#photo {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px var(--gray);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* == Contacts == */
+#contacts {
+  padding-top: 1.5rem;
+}
+#contacts li {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+#contacts li img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+/* == Side bar == */
+aside {
+  padding: 1rem;
+  background-color: var(--side-bar-bg);
+  border-radius: 2rem 0 0 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: start;
+  top: 5%;
+  /* box-shadow: 3px 3px 3px var(--gray); */
+  z-index: 10;
+}
+
+nav a,
+nav a:hover {
+  color: var(--text-color);
+}
+
+nav li {
+  position: relative;
+}
+nav svg {
+  width: 2rem;
+  padding: 0.5rem;
+}
+nav svg:hover {
+  width: 2.5rem;
+  padding: 0.25rem;
+  transition-duration: var(--link-transition-duration);
+}
+nav .tip {
+  position: absolute;
+  background-color: var(--side-bar-bg);
+  color: var(--text-color);
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0 2rem 2rem 0;
+  transform: translateX(4rem);
+  margin-top: -0.5rem;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  visibility: hidden;
+  transition-duration: var(--link-transition-duration);
+}
+nav svg:hover + .tip {
+  visibility: visible;
+  transform: translateX(0.9rem);
+  /* box-shadow: 3px 3px 3px var(--gray); */
+}
+
+/* == Main == */
+#main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-variant: small-caps;
+  margin: 0.25rem 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-color-hover);
+  transition-duration: var(--link-transition-duration);
+}
+
+wrap-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+wrap-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* == Education == */
+#exp ul {
+  position: relative;
+  margin-left: 1.5rem;
+}
+#edu ul,
+#lang ul {
+  position: relative;
+  margin-left: 2rem;
+}
+#edu ul::before,
+#lang ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  display: block;
+  width: 3px;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--list-dot);
+}
+#exp li {
+  padding: 0.2rem 0;
+}
+#edu li,
+#lang li {
+  padding: 0.5rem 0;
+}
+#edu li::before,
+#lang li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1rem + 2px);
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--list-dot);
+  transform: translate(-50%, 0);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+#exp li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--list-dot);
+  transform: translate(-50%, 50%);
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+
+/* == Table == */
+table {
+  border-bottom: 1px solid var(--main-bg1);
+}
+thead {
+  background-color: var(--table-bg);
+  text-align: center;
+}
+tr:nth-of-type(2n + 2) {
+  background-color: var(--table-bg);
+}
+
+/* == Code == */
+.code {
+  position: relative;
+}
+pre {
+  background-color: var(--code-bg);
+  padding: 0.5rem;
+  line-height: 125%;
+  border-radius: 0.5rem;
+}
+pre:before {
+  color: var(--tip-color);
+  content: 'Code';
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  right: 0;
+}
+
+/* == Skills == */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills p {
+  margin: 0.15rem;
+}
+.skills li {
+  flex-basis: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.diagram {
+  --v: calc(((18 / 5) * var(--p) - 90) * 1deg);
+  margin-bottom: 0.25rem;
+  box-sizing: border-box;
+  width: var(--dia-size);
+  height: var(--dia-size);
+  overflow: hidden;
+  border-radius: 50%;
+  padding: calc(var(--dia-size) * 0.15);
+  background: linear-gradient(var(--diargam-bg), var(--diargam-bg)) content-box,
+    linear-gradient(var(--v), transparent 50%, var(--diargam-progress) 0) 0 / min(100%, (var(--p) - 50) * 100%),
+    linear-gradient(to right, var(--bg-primary) 50%, var(--diargam-progress) 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.diagram img {
+  width: 75%;
+}
+.skill-html {
+  --p: var(--skill-html);
+}
+.skill-css3 {
+  --p: var(--skill-css3);
+}
+.skill-js {
+  --p: var(--skill-js);
+}
+.skill-node {
+  --p: var(--skill-node);
+}
+.skill-react {
+  --p: var(--skill-react);
+}
+.skill-parcer {
+  --p: var(--skill-parcer);
+}
+.skill-test {
+  --p: var(--skill-test);
+}
+.skill-sql {
+  --p: var(--skill-sql);
+}
+.skill-docker {
+  --p: var(--skill-docker);
+}
+.skill-linux {
+  --p: var(--skill-linux);
+}
