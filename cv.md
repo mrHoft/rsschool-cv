@@ -14,38 +14,17 @@ But I want to become a good fullstack (preferentially frontend) developer to wor
 
 ### Tech Stack:
 
-- HTML5, CSS3
+- HTML5
+- CSS3, SCSS, SASS
 - JavaScript, TypeScript
 - Node.js, Express.js
 - React, Redux, Styled Components
-- Webpack, Lerna, Vite
+- Next, NextAuth
+- Webpack, Lerna, Vite, Rollup
 - Chai, Mocha, Jest
-- SQL, Postgres, Sequelize
-- Linux, Docker, Compose
-- JavaScript, TypeScript
-<!--
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
-![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+- SQL, Postgres
+- Linux, Docker, Nginx
 
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-![Gimp Gnu Image Manipulation Program](https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF)
-
-![LINUX](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Perl](https://img.shields.io/badge/perl-%2339457E.svg?style=for-the-badge&logo=perl&logoColor=white)
--->
 ### Experience:
 
 | Period | Description |
@@ -56,11 +35,12 @@ But I want to become a good fullstack (preferentially frontend) developer to wor
 | 2001 - 2007 | Mobitel, Picadon, Sunrise<br/>Sales manager, director.<br/>Wholesale and retail trade in computer equipment, mobile phones, software. |
 
 ### Education:
-
-- Middle frontend-developer course from Я.Practicum.
-- The “programmer” certificate was received along with a diploma of a geodesist at the initiative of a computer science teacher for winning Olympiads (PSKhK).
-- English B1 (ESCC).
-- Self-development: RSSchool, W3Schools, EnglishClass101, freecodecamp.org, codewars.com, learn.javascript.ru and other.
+- RSSchool. Frontend 2023Q4. (in progress)
+- RSSchool. Frontend 2023Q2.
+- Y.Practicum. Middle frontend-developer.
+- PSKhK УТ-1 470695. The “programmer” certificate was received along with a diploma of a geodesist at the initiative of a computer science teacher for winning Olympiads (PSKhK).
+- ESCC. English B1.
+- Self-development: W3Schools, EnglishClass101, freecodecamp.org, codewars.com, learn.javascript, javascript.info and other. My hand book is MDN Web Docs.
 
 ### React hook code examle:
 
